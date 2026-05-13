@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2C1810">
+<title>ساتي بي | Sate B — القائمة الرقمية</title>
+<meta name="description" content="القائمة الرقمية لمطعم ساتي بي - الطعم الأصلي للساتي الإندونيسي في جدة">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crimson: #C0392B;
+    --deep-red: #96281B;
+    --ember: #E74C3C;
+    --amber: #E67E22;
+    --gold: #F39C12;
+    --gold-light: #FFD89B;
+    --cream: #FDF6EC;
+    --warm-white: #FEFAF4;
+    --charcoal: #2C1810;
+    --text-main: #3D1F14;
+    --text-muted: #7D5A4F;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background: var(--cream);
+    color: var(--text-main);
+    min-height: 100vh;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: linear-gradient(135deg, #2C1810 0%, #4A1C12 40%, #96281B 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 24px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(243,156,18,0.4) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  .corner-ornament {
+    position: absolute;
+    width: 80px; height: 80px;
+    border: 2px solid var(--gold);
+    opacity: 0.4;
+  }
+  .corner-tr { top: 16px; right: 16px; border-bottom: 0; border-left: 0; border-radius: 0 12px 0 0; }
+  .corner-bl { bottom: 16px; left: 16px; border-top: 0; border-right: 0; border-radius: 0 0 0 12px; }
+
+  .logo-badge {
+    width: 96px; height: 96px;
+    margin: 0 auto 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 4px rgba(243,156,18,0.3);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1;
+    animation: logo-pulse 3s ease-in-out infinite;
+  }
+  @keyframes logo-pulse {
+    0%, 100% { box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 4px rgba(243,156,18,0.3); }
+    50% { box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 0 8px rgba(243,156,18,0.4); }
+  }
+  .logo-text { text-align: center; line-height: 1; }
+  .logo-sate { font-size: 24px; font-weight: 900; color: var(--crimson); letter-spacing: 1px; }
+  .logo-b { display: inline-block; padding: 2px 8px; margin-top: 4px; background: var(--crimson); color: white; font-size: 22px; font-weight: 900; border-radius: 4px; }
+  .logo-ar { font-size: 10px; color: var(--crimson); font-weight: 700; margin-top: 4px; }
+
+  .brand-name-ar {
+    font-size: 52px; font-weight: 900;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #FFD89B 0%, #F39C12 50%, #E67E22 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative; z-index: 1;
+    letter-spacing: -1px;
+  }
+  .brand-name-en {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 6px;
+    font-weight: 300;
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+  .divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+  .divider-line {
+    height: 1px; width: 48px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .divider-line.reverse { background: linear-gradient(to left, transparent, var(--gold)); }
+  .divider-star { color: var(--gold); font-size: 16px; }
+  .slogan {
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    font-weight: 300;
+    position: relative; z-index: 1;
+  }
+  .slogan-en {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 3px;
+    margin-top: 4px;
+    position: relative; z-index: 1;
+  }
+  .pills {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 8px;
+    margin-top: 24px;
+    position: relative; z-index: 1;
+  }
+  .pill {
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px;
+    font-size: 12px;
+    color: white;
+  }
+
+  /* ─── STICKY NAV ─── */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--charcoal);
+    border-bottom: 2px solid var(--amber);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .nav-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    background: none; border: none;
+    color: rgba(255,255,255,0.6);
+    font-family: inherit;
+    font-size: 13px; font-weight: 700;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: color 0.25s;
+    white-space: nowrap;
+    position: relative;
+  }
+  .nav-btn:hover { color: white; }
+  .nav-btn.active { color: var(--gold); }
+  .nav-btn.active::after {
+    content: '';
+    position: absolute; bottom: 0;
+    right: 12px; left: 12px;
+    height: 3px;
+    background: linear-gradient(to right, var(--amber), var(--gold));
+    border-radius: 2px 2px 0 0;
+  }
+  .nav-icon { margin-left: 6px; font-size: 16px; }
+
+  /* ─── SEARCH ─── */
+  .search-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 16px 0;
+  }
+  .search-box {
+    position: relative;
+  }
+  .search-input {
+    width: 100%;
+    background: white;
+    border: 2px solid rgba(192,57,43,0.15);
+    border-radius: 16px;
+    padding: 14px 48px 14px 16px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text-main);
+    transition: all 0.25s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .search-input::placeholder { color: var(--text-muted); }
+  .search-input:focus {
+    outline: none;
+    border-color: var(--amber);
+    box-shadow: 0 0 0 4px rgba(243,156,18,0.15);
+  }
+  .search-icon {
+    position: absolute; top: 50%; right: 16px;
+    transform: translateY(-50%);
+    color: var(--crimson);
+    font-size: 18px;
+    pointer-events: none;
+  }
+  .search-clear {
+    position: absolute; top: 50%; left: 12px;
+    transform: translateY(-50%);
+    background: var(--cream); border: none;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: none;
+    align-items: center; justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .search-clear:hover { background: var(--crimson); color: white; }
+  .search-clear.visible { display: flex; }
+
+  /* ─── MAIN LAYOUTS ─── */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+  .section { margin-bottom: 40px; scroll-margin-top: 90px; }
+  .section.hidden { display: none; }
+  .section-header { text-align: center; margin-bottom: 24px; }
+  .section-icon { font-size: 36px; margin-bottom: 8px; }
+  .section-title {
+    font-size: 24px; font-weight: 900;
+    color: var(--text-main);
+    margin-bottom: 4px;
+  }
+  .section-subtitle {
+    font-size: 10px;
+    color: var(--crimson);
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  .section-divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; margin-top: 12px;
+  }
+  .section-divider-line {
+    height: 1px; width: 40px; background: var(--amber);
+  }
+
+  /* Layout Elements */
+  .hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: white;
+  }
+
+  /* ─── ITEM CARD ─── */
+  .items { display: flex; flex-direction: column; gap: 12px; }
+  .item {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(150,40,27,0.06);
+    border: 1px solid rgba(192,57,43,0.08);
+    display: flex;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative; /* For the floating featured badge */
+  }
+  .item:hover {
+    box-shadow: 0 8px 24px rgba(150,40,27,0.12);
+    border-color: rgba(230,126,34,0.3);
+    transform: translateY(-2px);
+  }
+  .item.featured {
+    border-color: rgba(243,156,18,0.4);
+    box-shadow: 0 2px 8px rgba(243,156,18,0.15), 0 0 0 2px rgba(243,156,18,0.1);
+  }
+  .item-image {
+    position: relative;
+    width: 110px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--cream) 0%, #FEEAD0 100%);
+    overflow: hidden;
+  }
+  .item-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .item:hover .item-image img { transform: scale(1.1); }
+  
+  .featured-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--gold);
+    color: white;
+    font-size: 9px; font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 999px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    z-index: 10;
+  }
+
+  .item-content {
+    flex: 1;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 110px;
+  }
+  .item-name {
+    font-size: 16px; font-weight: 900;
+    color: var(--text-main);
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .item-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Push price to the right */
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .price-badge {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    background: linear-gradient(to left, var(--crimson), var(--ember));
+    color: white;
+    font-weight: 900;
+    font-size: 17px;
+    padding: 4px 16px;
+    border-radius: 999px;
+    box-shadow: 0 3px 8px rgba(192,57,43,0.25);
+    min-width: 56px;
+  }
+  .price-unit {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 64px 20px;
+  }
+  .no-results-icon { font-size: 56px; margin-bottom: 12px; }
+  .no-results-text {
+    font-size: 17px; font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 6px;
+  }
+  .no-results-hint {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: linear-gradient(135deg, #2C1810 0%, #4A1C12 50%, #96281B 100%);
+    color: white;
+    padding: 48px 24px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  footer::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(243,156,18,0.5) 1px, transparent 0);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  .footer-inner { position: relative; z-index: 1; max-width: 500px; margin: 0 auto; }
+  .footer-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .footer-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 14px;
+  }
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(to left, var(--amber), var(--gold));
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(243,156,18,0.4);
+    transition: transform 0.2s;
+    direction: ltr;
+    letter-spacing: 1px;
+  }
+  .call-btn:hover { transform: scale(1.05); }
+  .call-btn:active { transform: scale(0.97); }
+
+  .socials {
+    display: flex; justify-content: center; gap: 12px;
+    margin: 24px 0 12px;
+  }
+  .social-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .social-btn:hover {
+    background: var(--gold);
+    transform: scale(1.1);
+  }
+  .social-handle {
+    color: var(--gold);
+    font-weight: 900;
+    letter-spacing: 1px;
+    direction: ltr;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .footer-brand {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand-ar { font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9); }
+  .footer-brand-en {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 4px;
+    margin-top: 4px;
+  }
+  .footer-slogan {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+    margin-top: 16px;
+  }
+  .credit {
+    font-size: 9px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 2px;
+    margin-top: 24px;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .section { animation: fade-up 0.5s ease-out backwards; }
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.15s; }
+  .section:nth-child(4) { animation-delay: 0.2s; }
+
+  /* ─── MOBILE TWEAKS ─── */
+  @media (max-width: 420px) {
+    .header { padding: 32px 20px 40px; }
+    .brand-name-ar { font-size: 44px; }
+    .item-image { width: 92px; }
+    .item-name { font-size: 15px; }
+    .price-badge { font-size: 16px; padding: 4px 14px; }
+    .nav-btn { padding: 14px 14px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="corner-ornament corner-tr"></div>
+  <div class="corner-ornament corner-bl"></div>
+  <div class="logo-badge">
+    <div class="logo-text">
+      <div class="logo-sate">SATE</div>
+      <div class="logo-b">B</div>
+      <div class="logo-ar">ساتي بي</div>
+    </div>
+  </div>
+  <h1 class="brand-name-ar">ساتي بي</h1>
+  <div class="brand-name-en">SATE B</div>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-star">✦</span>
+    <div class="divider-line reverse"></div>
+  </div>
+  <p class="slogan">"الطعم الأصلي للساتي"</p>
+  <p class="slogan-en">THE ORIGINAL TASTE OF SATAY</p>
+  <div class="pills">
+    <span class="pill">🇮🇩 مطبخ إندونيسي</span>
+    <span class="pill">📍 جدة</span>
+    <span class="pill">🔥 طازج يومياً</span>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner" id="nav-inner"></div>
+</nav>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <input type="text" id="search" class="search-input" placeholder="ابحث عن طبق...">
+    <span class="search-icon">🔍</span>
+    <button class="search-clear" id="search-clear" aria-label="مسح">✕</button>
+  </div>
+</div>
+
+<main id="menu"></main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-star">✦</span>
+      <div class="divider-line reverse"></div>
+    </div>
+    <div class="footer-label">FOR TAKEAWAY ORDERS</div>
+    <div class="footer-sub">للطلبات الخارجية</div>
+    <a href="tel:0503760010" class="call-btn">
+      <span>📞</span>
+      <span>0503760010</span>
+    </a>
+    <div class="socials">
+      <a href="https://instagram.com/sate_b20" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://twitter.com/sate_b20" target="_blank" rel="noopener" class="social-btn" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://tiktok.com/@sate_b20" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+      </a>
+    </div>
+    <span class="social-handle">@sate_b20</span>
+    <div class="footer-brand">
+      <div class="footer-brand-ar">ساتي بي</div>
+      <div class="footer-brand-en">SATE B · JEDDAH</div>
+    </div>
+    <p class="footer-slogan">"الطعم الأصلي للساتي"</p>
+    <p class="credit">DIGITAL MENU · CPIT-380 COMMUNITY SERVICE PROJECT</p>
+  </div>
+</footer>
+
+<script>
+  // ─── MENU DATA (UPDATED WITH IMAGE PATHS) ──────────────────────────────────
+  const CATEGORIES = [
+    {
+      id: "mixed", name: "الوجبات المشكلة", nameEn: "Mixed Meals", icon: "🍱",
+      items: [
+        { name: "مشكل صغير", desc: "صنف واحد لحم أو دجاج", price: 26 },
+        { name: "مشكل صغير", desc: "صنفين لحم ودجاج", price: 31 },
+        { name: "مشكل كبير", desc: "تشكيلة كاملة من الأطباق", price: 35 },
+        { name: "مشكل كبير", desc: "مع رز خارجي", price: 38 },
+        { name: "مشكل كبير", desc: "مع 4 أعواد ساتي", price: 46 },
+        { name: "مشكل عائلي", desc: "يكفي 4-5 أشخاص", price: 145, featured: true },
+        { name: "باو", desc: "دجاج أو زنجر", price: 22, largeImage: "images/bao.jpg" },
+      ],
+    },
+    {
+      id: "satay", name: "ساتي ونودلز", nameEn: "Satay & Noodles", icon: "🍢",
+      items: [
+        { name: "ساتي جامبو دجاج", desc: "10 أعواد", price: 28 },
+        { name: "ساتي جامبو لحم", desc: "10 أعواد", price: 32 },
+        { name: "ساتي جامبو جمبري", desc: "10 أعواد", price: 36 },
+        { name: "ساتي مكس", desc: "9 أعواد متنوعة", price: 30 },
+        { name: "ساتي كومبو", desc: "24 عود دجاج + 2 رز + 2 شوربة", price: 70, featured: true },
+        { name: "نودلز بي خضار", desc: "نكهة إندونيسية أصيلة", price: 15, largeImage: "images/noodles.jpg" },
+        { name: "بوكس الشواء", desc: "50 عود ساتي جاهزة للشواء مع صوص اللوز", price: 150, featured: true },
+      ],
+    },
+    {
+      id: "main", name: "أطباق رئيسية وجانبية", nameEn: "Main Dishes & Sides", icon: "🍛",
+      items: [
+        { name: "دجاج بالكاتشب", desc: "", price: 25, largeImage: "images/Main Side/1.png" },
+        { name: "لحم رندانغ", desc: "الطبق الإندونيسي الشهير", price: 28, largeImage: "images/Main Side/2.png" },
+        { name: "دجاج بالنارجيل", desc: "", price: 25, largeImage: "images/Main Side/3.png" },
+        { name: "كربوك", desc: "", price: 6, largeImage: "images/Main Side/4.png" },
+        { name: "كفتة بطاطس", desc: "4 حبات", price: 8, largeImage: "images/Main Side/5.png" },
+        { name: "باذنجان بالصوص", desc: "", price: 8, largeImage: "images/Main Side/6.png" },
+        { name: "دندن", desc: "", price: 30, largeImage: "images/Main Side/7.png" },
+        { name: "بيض بالخلطة", desc: "3 حبات", price: 9, largeImage: "images/Main Side/8.png" },
+        { name: "بطاطس مكعبات", desc: "", price: 10, largeImage: "images/Main Side/9.png" },
+        { name: "فاصوليا مقلقلة", desc: "", price: 10, largeImage: "images/Main Side/10.png" },
+        { name: "شيبس حراق", desc: "", price: 8, largeImage: "images/Main Side/11.png" },
+        { name: "رز مقلي", desc: "", price: 12, largeImage: "images/Main Side/12.png" },
+        { name: "مكرونة خواتم", desc: "", price: 10 },
+        { name: "قادو بي", desc: "", price: 12 },
+        { name: "رز أبيض", desc: "", price: 5 },
+        { name: "سنجبس / بطاطس مبشور", desc: "", price: 5 },
+        { name: "شيبس", desc: "", price: 8 },
+        { name: "شوربة", desc: "حجم صغير: 2 ريال", price: 5 },
+        { name: "صوص اللوز", desc: "حجم صغير: 5 ريال", price: 15 },
+        { name: "صوص السمبل", desc: "حجم صغير: 5 ريال", price: 15 },
+      ],
+    },
+    {
+      id: "extras", name: "المشروبات", nameEn: "Drinks", icon: "🥤",
+      items: [
+        { name: "مشروبات غازية", desc: "", price: 3 },
+        { name: "كركديه", desc: "", price: 5 },
+        { name: "آيس تي", desc: "", price: 5 },
+        { name: "ماء", desc: "", price: 1 },
+      ],
+    },
+  ];
+
+  // ─── RENDER NAV ──────────────────────────────────────────────────────────
+  const navInner = document.getElementById('nav-inner');
+  CATEGORIES.forEach((cat, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'nav-btn' + (idx === 0 ? ' active' : '');
+    btn.dataset.target = cat.id;
+    btn.innerHTML = `<span class="nav-icon">${cat.icon}</span>${cat.name}`;
+    btn.onclick = () => {
+      const target = document.getElementById('section-' + cat.id);
+      if (target) {
+        const top = target.offsetTop - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    };
+    navInner.appendChild(btn);
+  });
+
+  // ─── RENDER MENU WITH CONDITIONAL LAYOUTS ──────────────────────────────────
+  const menu = document.getElementById('menu');
+  CATEGORIES.forEach(cat => {
+    const section = document.createElement('section');
+    section.className = 'section';
+    section.id = 'section-' + cat.id;
+    
+    let sectionHTML = `
+      <div class="section-header">
+        <div class="section-icon">${cat.icon}</div>
+        <h2 class="section-title">${cat.name}</h2>
+        <div class="section-subtitle">${cat.nameEn.toUpperCase()}</div>
+        <div class="section-divider">
+          <div class="section-divider-line"></div>
+          <span class="divider-star">✦</span>
+          <div class="section-divider-line"></div>
+        </div>
+      </div>
+    `;
+
+    // Render the individual item cards
+    const itemsHTML = cat.items.map(item => {
+      if (item.largeImage) {
+        return `
+          <div class="item${item.featured ? ' featured' : ''}" style="display: flex; height: 160px; padding: 0; overflow: hidden;">
+            ${item.featured ? '<div class="featured-badge">⭐ مميز</div>' : ''}
+
+            <div class="item-content" style="flex: 1; padding: 16px; display: flex; flex-direction: column; justify-content: center;">
+              <div>
+                <div class="item-name" style="font-size: 18px;">${item.name}</div>
+                ${item.desc ? '<div class="item-desc" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">' + item.desc + '</div>' : ''}
+              </div>
+              <div class="item-footer" style="margin-top: auto; justify-content: flex-start; padding-top: 8px;">
+                <span class="price-badge">${item.price}</span>
+                <span class="price-unit">ريال</span>
+              </div>
+            </div>
+
+            <div style="flex: 0 0 45%; height: 160px; border-right: 1px solid rgba(192,57,43,0.08);">
+              <img src="${item.largeImage}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            </div>
+          </div>
+        `;
+      }
+      return `
+        <div class="item${item.featured ? ' featured' : ''}">
+          ${item.featured ? `<div class="featured-badge">⭐ مميز</div>` : ''}
+          <div class="item-content" style="padding: 14px 16px; min-height: 110px;">
+            <div>
+              <div class="item-name">${item.name}</div>
+              ${item.desc ? `<div class="item-desc">${item.desc}</div>` : ''}
+            </div>
+            <div class="item-footer">
+              <span class="price-badge">${item.price}</span>
+              <span class="price-unit">ريال</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Apply specific layouts based on Category ID
+    if (cat.id === 'mixed' || cat.id === 'satay') {
+      // LAYOUT A: Hero Banner Image
+      const heroSrc = cat.id === 'mixed' ? 'images/mixed-meals-hero.png' : 'images/satay-hero.png';
+      sectionHTML += `
+        <img src="${heroSrc}" alt="${cat.name}" class="hero-image">
+        <div class="items">${itemsHTML}</div>
+      `;
+    } else {
+      // Standard vertical stack layout for all other categories
+      sectionHTML += `
+        <div class="items">${itemsHTML}</div>
+      `;
+    }
+
+    section.innerHTML = sectionHTML;
+    menu.appendChild(section);
+  });
+
+  // ─── ACTIVE NAV ON SCROLL ────────────────────────────────────────────────
+  const navBtns = document.querySelectorAll('.nav-btn');
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 130;
+    let activeId = CATEGORIES[0].id;
+    for (const cat of CATEGORIES) {
+      const el = document.getElementById('section-' + cat.id);
+      if (el && el.offsetTop <= scrollPos) activeId = cat.id;
+    }
+    navBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.target === activeId);
+    });
+    // Auto-scroll the active button into view
+    const active = document.querySelector('.nav-btn.active');
+    if (active && active.scrollIntoView) {
+      active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    }
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+  // ─── SEARCH ──────────────────────────────────────────────────────────────
+  const searchInput = document.getElementById('search');
+  const searchClear = document.getElementById('search-clear');
+  function applySearch() {
+    const q = searchInput.value.trim();
+    searchClear.classList.toggle('visible', q.length > 0);
+    const sections = document.querySelectorAll('.section');
+    let anyVisible = false;
+    sections.forEach((section, idx) => {
+      const items = section.querySelectorAll('.item');
+      let visibleCount = 0;
+      items.forEach((itemEl, itemIdx) => {
+        const item = CATEGORIES[idx].items[itemIdx];
+        const haystack = (item.name + ' ' + (item.desc || '')).toLowerCase();
+        const matches = !q || haystack.includes(q.toLowerCase());
+        itemEl.style.display = matches ? '' : 'none';
+        if (matches) visibleCount++;
+      });
+      section.classList.toggle('hidden', q && visibleCount === 0);
+      if (visibleCount > 0) anyVisible = true;
+    });
+    let nr = document.getElementById('no-results');
+    if (q && !anyVisible) {
+      if (!nr) {
+        nr = document.createElement('div');
+        nr.id = 'no-results';
+        nr.className = 'no-results';
+        nr.innerHTML = `
+          <div class="no-results-icon">🔍</div>
+          <div class="no-results-text">لم يتم العثور على نتائج</div>
+          <div class="no-results-hint">جرّب البحث بكلمة أخرى</div>
+        `;
+        menu.appendChild(nr);
+      }
+    } else if (nr) nr.remove();
+  }
+  searchInput.addEventListener('input', applySearch);
+  searchClear.addEventListener('click', () => {
+    searchInput.value = '';
+    applySearch();
+    searchInput.focus();
+  });
+</script>
+
+</body>
+</html>
