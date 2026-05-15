@@ -1,12 +1,13 @@
-# 🕌 Sate B — Digital Restaurant Menu
+# 🍢 Sate B — Digital Menu
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/status-prototype-orange)
+![Status](https://img.shields.io/badge/status-deployed-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-web-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![Course](https://img.shields.io/badge/CPIT--380-Community%20Service-orange)
 
-**A bilingual Arabic-English digital menu prototype for Sate B, an Indonesian satay restaurant in Jeddah.**
+**An Arabic digital menu for Sate B, an Indonesian satay restaurant in Makkah.**
 
 **[🚀 Live Demo](https://effulgent-queijadas-bbb34b.netlify.app/)**
 
@@ -16,19 +17,40 @@
 
 ## 📖 About the Project
 
-**Sate B Digital Menu** is a community service project built for CPIT-380, designed to modernize the dining experience at a local Indonesian restaurant. The prototype showcases a fully responsive, single-page web application that replaces traditional paper menus with an elegant digital alternative.
+**Sate B Digital Menu** is a community service project built for CPIT-380 at King Abdulaziz University. The goal was to modernize the dining experience at a local Indonesian restaurant by replacing a crowded printed menu with a clean, responsive digital alternative.
 
-### ✨ Features
+---
 
-- 🌐 **Bilingual Support** — Full Arabic RTL interface with English labels
-- 📱 **Mobile-First Design** — Optimized for phone/tablet use at the table
-- 🔍 **Real-Time Search** — Instantly filter menu items by name
-- 🗂️ **Sticky Category Navigation** — Smooth-scroll category tabs
-- 🖼️ **Visual Menu Items** — Featured dishes with images
-- ⭐ **Featured Highlights** — Marked popular items with badges
-- 🎨 **Premium Aesthetic** — Indonesian-inspired warm color palette with golden accents
+## 🔄 Before & After
 
-### 🎯 Design System
+<table>
+  <tr>
+    <td align="center" width="48%">
+      <strong>❌ Before — Original Printed Menu</strong><br/>
+      <img src="Agent/Before/old menu 1.jpeg" width="100%" alt="Original printed menu" /><br/>
+      <sub>Heavy red background · Crowded layout · Low readability</sub>
+    </td>
+    <td align="center" width="48%">
+      <strong>✅ After — New Digital Menu</strong><br/>
+      <img src="Agent/Preview_Shots/0.png" width="100%" alt="New digital menu" /><br/>
+      <sub>Clean cream layout · Modern UI · Premium presentation</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## ✨ Features
+
+- 🌐 **Arabic RTL Interface** — right-to-left layout with English brand labels
+- 📱 **Mobile-First Design** — optimized for phone/tablet use at the table
+- 🔍 **Real-Time Search** — instantly filter menu items by name
+- 🗂️ **Sticky Category Navigation** — smooth-scroll category tabs
+- 🖼️ **Visual Menu Items** — featured dishes with high-quality images
+- ⭐ **Featured Highlights** — popular items marked with badges
+- 🎨 **Premium Aesthetic** — Indonesian-inspired warm color palette
+
+### 🎨 Design System
 
 | Element | Value |
 |---|---|
@@ -41,20 +63,24 @@
 
 ---
 
-## 📂 Project Structure
+## 📸 Screenshots
 
-```
-Asian-Restaurant-Menu/
-├── index.html          # Main application (single file)
-├── images/
-│   ├── Main Side/      # Main dish photography (1-12)
-│   ├── bao.jpg         # Bao buns hero image
-│   ├── noodles.jpg     # Noodles hero image
-│   ├── satay-hero.png  # Satay section banner
-│   └── mixed-meals-hero.png
-├── .idea/              # IDE config (not deployed)
-└── README.md
-```
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="Agent/Preview_Shots/0.png" width="100%" alt="Homepage" /><br/>
+      <sub>Homepage</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="Agent/Preview_Shots/1.png" width="100%" alt="Mixed Meals" /><br/>
+      <sub>Mixed Meals</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="Agent/Preview_Shots/2.png" width="100%" alt="Satay & Noodles" /><br/>
+      <sub>Satay & Noodles</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -66,6 +92,38 @@ Asian-Restaurant-Menu/
 | 2 | ساتي ونودلز | Satay skewers & Indonesian noodles |
 | 3 | أطباق رئيسية وجانبية | Main dishes with visual menu items |
 | 4 | المشروبات | Soft drinks & beverages |
+
+---
+
+## 📱 QR Code Access
+
+Scan to open the menu directly on your phone — no download needed.
+
+<div align="center">
+  <img src="Agent/Info/Menu Qr.png" width="180" alt="Sate B Menu QR Code" />
+  <br/>
+  <sub>Point your camera at this code to open the menu instantly</sub>
+</div>
+
+---
+
+## 📂 Project Structure
+
+```
+SateB-Digital-Menu/
+├── index.html              # Main application (single file)
+├── images/
+│   ├── Main Side/          # Main dish photography (1-12)
+│   ├── bao.jpg             # Bao buns hero image
+│   ├── noodles.jpg         # Noodles hero image
+│   ├── satay-hero.png      # Satay section banner
+│   └── mixed-meals-hero.png
+├── Agent/
+│   ├── Info/               # Owner feedback, QR code & project report
+│   ├── Before/             # Original printed menu photos
+│   └── Preview_Shots/      # Screenshots & QR codes
+└── README.md
+```
 
 ---
 
@@ -84,7 +142,7 @@ Asian-Restaurant-Menu/
 
 ## 🚀 Deployment
 
-The site auto-deploys to **Netlify** on every push to the `master` branch.
+Auto-deploys to **Netlify** on every push to `master`.
 
 ```
 GitHub Repo → Netlify → Live URL
@@ -94,32 +152,53 @@ GitHub Repo → Netlify → Live URL
 
 ---
 
-## 🎨 Screenshots
+## 📊 Owner Evaluation Results
 
-> *Visual menu with image cards, sticky nav, and search bar*
+Restaurant owner evaluated the digital menu across 10 criteria — all perfect scores.
+
+![Ease of Use](https://img.shields.io/badge/Ease%20of%20Use-5%2F5-brightgreen)
+![Menu Design](https://img.shields.io/badge/Menu%20Design-5%2F5-brightgreen)
+![Image Quality](https://img.shields.io/badge/Image%20Quality-5%2F5-brightgreen)
+![Category Organization](https://img.shields.io/badge/Category%20Organization-5%2F5-brightgreen)
+![Mobile Speed](https://img.shields.io/badge/Mobile%20Speed-5%2F5-brightgreen)
+![Brand Identity](https://img.shields.io/badge/Brand%20Identity-5%2F5-brightgreen)
+![Price Accuracy](https://img.shields.io/badge/Price%20Accuracy-5%2F5-brightgreen)
+![Customer Experience](https://img.shields.io/badge/Customer%20Experience-5%2F5-brightgreen)
+![Team Performance](https://img.shields.io/badge/Team%20Performance-5%2F5-brightgreen)
+![QR Adoption](https://img.shields.io/badge/QR%20Adoption-Permanent%20✓-blue)
+
+> *"Excellent work in all aspects — no further notes needed."*
+>
+> — Restaurant Owner, Sate B · May 2026
+
+---
+
+## 💡 Impact
+
+| Group | Benefit |
+|---|---|
+| **Restaurant Customers** | Faster, easier browsing on smartphones |
+| **Restaurant Staff** | Faster ordering process, fewer questions |
+| **Restaurant Management** | Modern brand tool, better customer engagement |
 
 ---
 
 ## 📌 Future Enhancements
 
-- [ ] QR code generator for table placement
-- [ ] Order cart functionality
+- [ ] Online ordering — direct order placement through the menu
 - [ ] Multi-language toggle (AR/EN)
-- [ ] Admin panel for menu updates
+- [ ] Promotional offers & seasonal daily specials
+- [ ] QR code generator for table placement
+- [ ] Customer analytics — insights on popular dishes
+- [ ] Order cart functionality
 - [ ] Nutrition info & allergen warnings
-- [ ] Analytics dashboard for popular items
-
----
-
-## 👨‍💻 Author
-
-**CPIT-380 — Community Service Project**
-
-Built with ❤️ for Sate B, Jeddah
+- [ ] Continuous menu content management system
 
 ---
 
 <div align="center">
+
+Built with ❤️ for Sate B Restaurant, Makkah
 
 ⭐ *Star this repo if you found it useful!*
 
